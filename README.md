@@ -1,0 +1,2 @@
+# rtl8733BS_WiFi_linux
+rtl8733BS_WiFi_linux
