@@ -12687,11 +12687,17 @@ void roam_status_chk(_adapter *padapter, u8 from_timer)
 		/* update last_roaming time again to prevent
 		 * roaming too aggressive
 		 */
+	#if (LINUX_VERSION_CODE < KERNEL_VERSION(5, 15, 0))
 		pmlmepriv->last_roaming = rtw_get_current_time();
+	#endif
 		return;
 	}
 
+#if (LINUX_VERSION_CODE < KERNEL_VERSION(5, 15, 0))
 	if (pmlmepriv->roam_network)
+#else
+	if (&(pmlmepriv->cur_network))
+#endif
 		return;
 
 	/* linked infrastructure client mode */

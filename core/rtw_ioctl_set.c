@@ -178,7 +178,11 @@ u8 rtw_do_join(_adapter *padapter)
 				pmlmepriv->to_join = _FALSE;
 				#endif /* CONFIG_AP_MODE */
 
+			#if (LINUX_VERSION_CODE < KERNEL_VERSION(5, 15, 0))
 			} else if (pmlmepriv->need_to_roam == _TRUE || rtw_to_roam(padapter) > 0) {
+			#else
+			} else if (rtw_to_roam(padapter) > 0) {
+			#endif
 				/* can't associate ; reset under-linking			 */
 				_clr_fwstate_(pmlmepriv, WIFI_UNDER_LINKING);
 				rtw_set_to_roam(padapter, 0);
