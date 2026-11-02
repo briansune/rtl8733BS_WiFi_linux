@@ -2,5 +2,5 @@
 
 ## Vendor Version - 5.15.17-113
 
-## Report Version - 6.12
+## Report Version - 6.12 & 6.19
 
