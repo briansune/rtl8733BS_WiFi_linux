@@ -1,5 +1,16 @@
 # rtl8733BS_WiFi_linux
 
+## Important
+
+Realtek chip have two variants:
+
+1) RTL8733BS-CG
+2) RTL8733BS-VQ-CG
+
+The different is BLE vs BR/EDR+BLE !!!
+
+Which the PCM is not possible on BLE variant !!!
+
 ## Info / Log
 
 1) Make sure WL_DIS# & BT_DIS# is pulled high
